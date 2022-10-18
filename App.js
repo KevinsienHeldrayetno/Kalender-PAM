@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from 'react';
+import {Text, View} from 'react-native';
+import {Calendar} from 'react-native-calendars';
+const kalendar = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View
+    style={{
+      flex: 1,
+      backgroundColor: "black",
+      justifyContent: "center",
+      alignItems: "center"
+    }}>
+      <Text>Testing</Text>
+      <Calendar
+        markingType={'custom'}
+        markedDates={{
+          '2022-10-19' : {customStyles:{container:{backgroundColor:"red", elevation:2}, text:{color:'black'}}},
+          '2022-10-28' : {customStyles:{container:{backgroundColor:"red", elevation:2}, text:{color:'black'}}},
+          '2022-11-01' : {customStyles:{container:{backgroundColor:"red", elevation:2}, text:{color:'black'}}},
+          '2022-10-10' : {customStyles:{container:{backgroundColor:"red", elevation:2}, text:{color:'black'}}}
+        }}
+      />
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default kalendar;
